@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <body>
+    <button id="btn1" type="button">HTML</button>
+
+    <p>Click the "Try it" button to return the type of the "HTML" button:</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p id="demo"></p>
+
+    <script>
+      function myFunction() {
+        // Mengambil nilai atribut 'type' dari tombol dengan ID "btn1"
+        var x = document.getElementById("btn1").type;
+
+        // Menampilkan hasilnya ("button") ke dalam elemen paragraf
+        document.getElementById("demo").innerHTML = x;
+      }
+    </script>
+  </body>
+</html>

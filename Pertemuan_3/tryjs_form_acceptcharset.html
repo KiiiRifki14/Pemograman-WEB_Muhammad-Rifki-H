@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <body>
+    <form id="frm1" accept-charset="ISO-8859-1">
+      First name: <input type="text" name="fname" value="Donald" /><br />
+      Last name: <input type="text" name="lname" value="Duck" /><br />
+    </form>
+
+    <p>Click "Try it" to display accept-charset of the form:</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p id="demo"></p>
+
+    <script>
+      function myFunction() {
+        // Mengambil nilai atribut 'accept-charset' dari form dengan ID "frm1"
+        // Perhatikan penulisan di JavaScript menjadi 'acceptCharset' (tanpa tanda strip)
+        var x = document.getElementById("frm1").acceptCharset;
+
+        // Menampilkan hasil tersebut (yaitu "ISO-8859-1") ke layar
+        document.getElementById("demo").innerHTML = x;
+      }
+    </script>
+  </body>
+</html>

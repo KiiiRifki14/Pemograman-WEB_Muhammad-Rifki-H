@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <head>
+    <script>
+      function getIndex() {
+        // Mengambil nilai indeks dari opsi yang sedang dipilih pada elemen "mySelect",
+        // lalu langsung menampilkannya ke dalam elemen paragraf dengan ID "demo".
+        // Ingat: Indeks dimulai dari 0 (Apple = 0, Orange = 1, dst).
+        document.getElementById("demo").innerHTML =
+          document.getElementById("mySelect").selectedIndex;
+      }
+    </script>
+  </head>
+  <body>
+    <form>
+      Select your favorite fruit:
+      <select id="mySelect">
+        <option>Apple</option>
+        <option>Orange</option>
+        <option>Pineapple</option>
+        <option>Banana</option>
+      </select>
+      <br /><br />
+
+      <input
+        type="button"
+        onclick="getIndex()"
+        value="Display the index of the selected option"
+      />
+    </form>
+
+    <p id="demo"></p>
+  </body>
+</html>

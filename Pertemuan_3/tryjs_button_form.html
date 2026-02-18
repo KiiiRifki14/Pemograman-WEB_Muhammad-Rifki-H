@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <form id="form1">
+      <button id="btn1" type="button">HTML</button>
+    </form>
+
+    <p>Click the "Try it" button to display the id of the form the HTML button belongs to:</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p id="demo"></p>
+
+    <script>
+      function myFunction() {
+        // Mengambil ID dari form tempat tombol "btn1" berada
+        var x = document.getElementById("btn1").form.id;
+        
+        // Menampilkan hasil ID tersebut (yaitu "form1") ke layar
+        document.getElementById("demo").innerHTML = x;
+      }
+    </script>
+
+</body>
+</html>

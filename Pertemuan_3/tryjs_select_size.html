@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <head>
+    <script>
+      // Fungsi untuk mengubah jumlah opsi yang terlihat secara langsung
+      function changeSize() {
+        // Mengubah ukuran dropdown menjadi 4 baris
+        document.getElementById("mySelect").size = 4;
+      }
+    </script>
+  </head>
+  <body>
+    <form>
+      <select id="mySelect">
+        <option>Apple</option>
+        <option>Banana</option>
+        <option>Orange</option>
+        <option>Melon</option>
+      </select>
+
+      <input type="button" onclick="changeSize()" value="Change size" />
+    </form>
+  </body>
+</html>

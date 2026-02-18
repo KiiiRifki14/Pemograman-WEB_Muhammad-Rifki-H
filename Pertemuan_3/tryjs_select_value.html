@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <body>
+    <form>
+      Select your favorite fruit:
+      <select id="mySelect">
+        <option value="v_apple">Apple</option>
+        <option value="v_orange">Orange</option>
+        <option value="v_banana">Banana</option>
+      </select>
+    </form>
+    <br />
+
+    <p>Click the button to return the value of the selected fruit:</p>
+
+    <button type="button" onclick="myFunction()">Try it</button>
+
+    <p id="demo"></p>
+
+    <script>
+      function myFunction() {
+        // Mengambil nilai (value) dari opsi yang sedang dipilih pada dropdown
+        var x = document.getElementById("mySelect").value;
+        document.getElementById("demo").innerHTML = x;
+      }
+    </script>
+  </body>
+</html>

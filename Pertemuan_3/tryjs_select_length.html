@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head> </head>
+  <body>
+    <form>
+      <select id="mySelect">
+        <option>Apple</option>
+        <option>Pear</option>
+        <option>Banana</option>
+        <option>Orange</option>
+      </select>
+    </form>
+
+    <p>There are <span id="demo">0</span> options in the list.</p>
+
+    <script>
+      // Mengambil jumlah total pilihan (option) yang ada di dalam elemen "mySelect"
+      // lalu mengganti angka "0" di dalam span "demo" dengan hasil perhitungan (yaitu 4)
+      document.getElementById("demo").innerHTML =
+        document.getElementById("mySelect").length;
+    </script>
+  </body>
+</html>

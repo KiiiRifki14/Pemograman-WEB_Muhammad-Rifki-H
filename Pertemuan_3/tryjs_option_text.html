@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <body>
+    <form>
+      Select your favorite fruit:
+      <select id="mySelect">
+        <option id="apple">Apple</option>
+        <option id="orange">Orange</option>
+        <option id="banana">Banana</option>
+      </select>
+    </form>
+    <br />
+
+    <p>Click the button to return the text of the orange option:</p>
+
+    <button type="button" onclick="myFunction()">Try it</button>
+
+    <p id="demo"></p>
+
+    <script>
+      function myFunction() {
+        // Mengambil teks yang ada di dalam elemen option dengan ID "orange"
+        var x = document.getElementById("orange").text;
+        document.getElementById("demo").innerHTML = x;
+      }
+    </script>
+  </body>
+</html>
