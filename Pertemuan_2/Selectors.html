@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      /* 1. Element Selector: Semua tag <p> akan berwarna biru */
+      p {
+        color: blue;
+      }
+
+      /* 2. ID Selector: Elemen dengan id="para1" (hanya satu) akan rata tengah & merah */
+      #para1 {
+        text-align: center;
+        color: red;
+      }
+
+      /* 3. Class Selector: Semua elemen dengan class="center" akan rata tengah */
+      .center {
+        text-align: center;
+        color: green; /* Saya ubah hijau agar beda */
+      }
+
+      /* 4. Specific Element Class: Hanya <p> yang punya class="large" font-nya besar */
+      p.large {
+        font-size: 200%;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>CSS Selectors</h2>
+
+    <p>Ini paragraf biasa (terkena style element selector).</p>
+
+    <p id="para1">Ini paragraf dengan ID="para1" (unik).</p>
+
+    <h3 class="center">Judul ini ikut class="center".</h3>
+    <p class="center">Paragraf ini juga ikut class="center".</p>
+
+    <p class="center large">Paragraf ini punya dua class (center dan large).</p>
+  </body>
+</html>
