@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Belajar JavaScript</title>
+  </head>
+  <body>
+    <h2>Belajar JavaScript D3 Sistem Informasi</h2>
+    <button onclick="sayhallow()">Klik Saya</button>
+    <div id="Haii"></div>
+    <script>
+      function sayhallow() {
+        let nama = prompt("Masukkan Nama Anda");
+        let usia = parseInt(prompt("Masukkan Usia Anda"));
+
+        let tekshasil = "<h3>Say Hallow Belajar JavaScript  </h3>";
+        tekshasil += "<p> nama = <b>" + nama + "</b> </p>";
+        tekshasil += "<p> usia = <b>" + usia + "</b> </p>";
+
+        document.getElementById("Haii").innerHTML = tekshasil;
+      }
+    </script>
+  </body>
+</html>

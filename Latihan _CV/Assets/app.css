@@ -1,14 +1,16 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   font-family: "Segoe UI", Arial, sans-serif;
   background-color: #d1c6c6;
-  margin: 0;
   padding: 40px 0;
   display: flex;
   justify-content: center;
+  transition: background-color 0.4s ease;
 }
 
 #container {
@@ -16,14 +18,17 @@ body {
   width: 800px;
   background-color: white;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.4s ease;
 }
 
+/* Panel Kiri */
 #left-panel {
   background-color: #2c3e50;
   color: white;
   width: 35%;
   padding: 30px;
   text-align: center;
+  transition: background-color 0.4s ease;
 }
 
 #left-panel img {
@@ -67,10 +72,20 @@ body {
   text-align: left;
   padding-left: 20px;
   font-size: 14px;
+  list-style: none;
 }
 
 #left-panel li {
   margin-bottom: 5px;
+  position: relative;
+  padding-left: 12px;
+}
+
+#left-panel li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: #bdc3c7;
 }
 
 #contact-info {
@@ -82,11 +97,13 @@ body {
   margin: 8px 0;
 }
 
+/* Panel Kanan */
 #right-panel {
   background-color: white;
   color: #333;
   width: 65%;
   padding: 40px;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 #right-panel h3 {
@@ -97,6 +114,7 @@ body {
   margin-top: 30px;
   margin-bottom: 15px;
   text-transform: uppercase;
+  transition: color 0.4s ease, border-color 0.4s ease;
 }
 
 #data-pribadi-header {
@@ -118,6 +136,7 @@ td:first-child {
   width: 180px;
   font-weight: bold;
   color: #555;
+  transition: color 0.4s ease;
 }
 
 #right-panel ul {
@@ -134,6 +153,7 @@ h4 {
   font-size: 16px;
   margin: 15px 0 2px 0;
   color: #2c3e50;
+  transition: color 0.4s ease;
 }
 
 i {
@@ -141,4 +161,79 @@ i {
   color: #7f8c8d;
   display: block;
   margin-bottom: 5px;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #1a1a2e;
+}
+
+body.dark-mode #container {
+  background-color: #16213e;
+}
+
+body.dark-mode #left-panel {
+  background-color: #0f3460;
+}
+
+body.dark-mode #right-panel {
+  background-color: #16213e;
+  color: #e0e0e0;
+}
+
+body.dark-mode #right-panel h3 {
+  color: #e94560;
+  border-bottom-color: #e94560;
+}
+
+body.dark-mode h4 {
+  color: #e94560;
+}
+
+body.dark-mode td:first-child {
+  color: #bbb;
+}
+
+/* Floating Action Buttons */
+#fab-container {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 999;
+}
+
+#fab-container button {
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background-color: #2c3e50;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#fab-container button:hover {
+  transform: scale(1.15);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+#btn-scroll-top {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+@media print {
+  #fab-container {
+    display: none !important;
+  }
 }
