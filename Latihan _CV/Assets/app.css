@@ -32,12 +32,23 @@ body {
 }
 
 #left-panel img {
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   border: 4px solid #34495e;
   object-fit: cover;
   margin-bottom: 15px;
+  cursor: pointer;
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+}
+
+#left-panel img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(52, 152, 219, 0.5);
+  border-color: #3498db;
 }
 
 #left-panel h1 {
@@ -51,12 +62,34 @@ body {
   font-weight: normal;
   color: #bdc3c7;
   margin-bottom: 20px;
+  min-height: 20px;
+}
+
+#left-panel h2 .cursor-blink {
+  display: inline-block;
+  width: 2px;
+  height: 14px;
+  background-color: #3498db;
+  margin-left: 2px;
+  animation: blink 0.7s infinite;
+  vertical-align: middle;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 #left-panel p {
   font-size: 13px;
   line-height: 1.5;
   margin-bottom: 20px;
+  text-align: justify;
 }
 
 #left-panel h3 {
@@ -68,26 +101,35 @@ body {
   text-align: left;
 }
 
-#left-panel ul {
+/* Skill Bars */
+.skill-item {
   text-align: left;
-  padding-left: 20px;
-  font-size: 14px;
-  list-style: none;
+  margin-bottom: 10px;
 }
 
-#left-panel li {
-  margin-bottom: 5px;
-  position: relative;
-  padding-left: 12px;
+.skill-name {
+  font-size: 13px;
+  display: block;
+  margin-bottom: 4px;
 }
 
-#left-panel li::before {
-  content: "▸";
-  position: absolute;
-  left: 0;
-  color: #bdc3c7;
+.skill-bar {
+  width: 100%;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  overflow: hidden;
 }
 
+.skill-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #3498db, #2ecc71);
+  border-radius: 4px;
+  transition: width 1.2s ease;
+}
+
+/* Kontak */
 #contact-info {
   text-align: left;
   font-size: 13px;
@@ -97,13 +139,59 @@ body {
   margin: 8px 0;
 }
 
+.contact-item {
+  position: relative;
+  cursor: pointer;
+  padding: 5px 8px;
+  border-radius: 6px;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.contact-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateX(5px);
+}
+
+.contact-item[data-tooltip]:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  white-space: nowrap;
+  z-index: 10;
+}
+
 /* Panel Kanan */
 #right-panel {
   background-color: white;
   color: #333;
   width: 65%;
   padding: 40px;
-  transition: background-color 0.4s ease, color 0.4s ease;
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
+}
+
+/* Section Scroll Reveal */
+.section {
+  opacity: 0;
+  transform: translateY(25px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 #right-panel h3 {
@@ -114,7 +202,9 @@ body {
   margin-top: 30px;
   margin-bottom: 15px;
   text-transform: uppercase;
-  transition: color 0.4s ease, border-color 0.4s ease;
+  transition:
+    color 0.4s ease,
+    border-color 0.4s ease;
 }
 
 #data-pribadi-header {
@@ -147,6 +237,11 @@ td:first-child {
 #right-panel li {
   margin-bottom: 10px;
   font-size: 14px;
+  transition: transform 0.2s ease;
+}
+
+#right-panel li:hover {
+  transform: translateX(5px);
 }
 
 h4 {
@@ -161,6 +256,54 @@ i {
   color: #7f8c8d;
   display: block;
   margin-bottom: 5px;
+}
+
+#right-panel a {
+  color: #2c3e50;
+  text-decoration: none;
+  border-bottom: 1px dashed #3498db;
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+#right-panel a:hover {
+  color: #3498db;
+  border-bottom-style: solid;
+}
+
+body.dark-mode #right-panel a {
+  color: #e0e0e0;
+  border-bottom-color: #e94560;
+}
+
+body.dark-mode #right-panel a:hover {
+  color: #e94560;
+}
+
+/* Toast Notification */
+#toast {
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background-color: #2c3e50;
+  color: white;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+#toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
 
 /* Dark Mode */
@@ -194,6 +337,10 @@ body.dark-mode td:first-child {
   color: #bbb;
 }
 
+body.dark-mode #toast {
+  background-color: #e94560;
+}
+
 /* Floating Action Buttons */
 #fab-container {
   position: fixed;
@@ -215,7 +362,9 @@ body.dark-mode td:first-child {
   font-size: 20px;
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -233,7 +382,115 @@ body.dark-mode td:first-child {
 }
 
 @media print {
-  #fab-container {
+  #fab-container,
+  #toast {
     display: none !important;
+  }
+
+  .section {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  body {
+    padding: 0 !important;
+    margin: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  #container {
+    width: 100% !important;
+    box-shadow: none !important;
+    min-height: 100vh !important;
+  }
+
+  #left-panel {
+    padding: 25px !important;
+    width: 33% !important;
+  }
+
+  #left-panel img {
+    width: 110px !important;
+    height: 110px !important;
+    margin-bottom: 10px !important;
+  }
+
+  #left-panel h1 {
+    font-size: 18px !important;
+    margin: 8px 0 5px 0 !important;
+  }
+
+  #left-panel h2 {
+    font-size: 12px !important;
+    margin-bottom: 15px !important;
+  }
+
+  #left-panel p {
+    font-size: 11px !important;
+    margin-bottom: 15px !important;
+    line-height: 1.4 !important;
+  }
+
+  #left-panel h3 {
+    font-size: 14px !important;
+    margin-top: 20px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .skill-name {
+    font-size: 12px !important;
+  }
+
+  .skill-item {
+    margin-bottom: 8px !important;
+  }
+
+  .skill-bar {
+    height: 6px !important;
+  }
+
+  #contact-info p {
+    font-size: 11px !important;
+    margin: 6px 0 !important;
+  }
+
+  #right-panel {
+    padding: 25px 30px !important;
+    width: 67% !important;
+  }
+
+  #right-panel h3 {
+    font-size: 16px !important;
+    margin-top: 20px !important;
+    margin-bottom: 10px !important;
+    padding-bottom: 4px !important;
+  }
+
+  table {
+    font-size: 13px !important;
+  }
+
+  td {
+    padding: 5px 0 !important;
+  }
+
+  td:first-child {
+    width: 160px !important;
+  }
+
+  #right-panel li {
+    font-size: 13px !important;
+    margin-bottom: 8px !important;
+  }
+
+  h4 {
+    font-size: 14px !important;
+    margin: 12px 0 3px 0 !important;
+  }
+
+  i {
+    font-size: 12px !important;
+    margin-bottom: 3px !important;
   }
 }

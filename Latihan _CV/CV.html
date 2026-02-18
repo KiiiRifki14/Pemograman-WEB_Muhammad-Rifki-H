@@ -8,7 +8,7 @@
   </head>
   <body>
     <div id="container">
-      <!-- ========== Panel Kiri ========== -->
+      <!-- Panel Kiri -->
       <div id="left-panel">
         <div id="profile-header">
           <img
@@ -18,7 +18,7 @@
           />
           <div id="profile-text">
             <h1 id="nama">Muhammad Rifki<br />Hermmaulana</h1>
-            <h2 id="job-title">Mahasiswa Sistem Informasi</h2>
+            <h2 id="job-title"></h2>
             <p id="about-me">
               Saya adalah mahasiswa D3 Sistem Informasi di Politeknik Negeri
               Subang. Saya memiliki minat yang besar dalam pengembangan web dan
@@ -28,99 +28,135 @@
         </div>
 
         <h3 id="keahlian-header">KEAHLIAN</h3>
-        <ul id="keahlian-list">
-          <li>Microsoft Office</li>
-          <li>Konfigurasi Mikrotik</li>
-          <li>Desain Grafis</li>
-          <li>Rakit PC</li>
-          <li>Kepemimpinan</li>
-          <li>Kolaborasi</li>
-        </ul>
+        <div id="keahlian-list">
+          <div class="skill-item" data-skill="90">
+            <span class="skill-name">Microsoft Office</span>
+            <div class="skill-bar"><div class="skill-fill"></div></div>
+          </div>
+          <div class="skill-item" data-skill="80">
+            <span class="skill-name">Konfigurasi Mikrotik</span>
+            <div class="skill-bar"><div class="skill-fill"></div></div>
+          </div>
+          <div class="skill-item" data-skill="76">
+            <span class="skill-name">Desain Grafis</span>
+            <div class="skill-bar"><div class="skill-fill"></div></div>
+          </div>
+          <div class="skill-item" data-skill="70">
+            <span class="skill-name">Rakit PC</span>
+            <div class="skill-bar"><div class="skill-fill"></div></div>
+          </div>
+          <div class="skill-item" data-skill="70">
+            <span class="skill-name">Kepemimpinan</span>
+            <div class="skill-bar"><div class="skill-fill"></div></div>
+          </div>
+          <div class="skill-item" data-skill="63">
+            <span class="skill-name">Kolaborasi</span>
+            <div class="skill-bar"><div class="skill-fill"></div></div>
+          </div>
+        </div>
 
         <h3 id="kontak-header">KONTAK</h3>
         <div id="contact-info">
-          <p>📞 0882-2048-7058</p>
-          <p>✉️ muhammadrifki08t@Gmail.com</p>
-          <p>📍 Desa Babakan Bandung, Kec. Kalijati</p>
-          <p>🔗 github.com/kiiirifki14</p>
+          <p class="contact-item" data-tooltip="Klik untuk salin nomor">
+            📞 0882-2048-7058
+          </p>
+          <p class="contact-item" data-tooltip="Klik untuk kirim email">
+            ✉️ muhammadrifki08t@Gmail.com
+          </p>
+          <p class="contact-item">📍 Desa Kalijati Barat, Kec. Kalijati</p>
+          <p class="contact-item" data-tooltip="Klik untuk buka GitHub">
+            🔗 github.com/kiiirifki14
+          </p>
         </div>
       </div>
 
-      <!-- ========== Panel Kanan ========== -->
+      <!-- Panel Kanan -->
       <div id="right-panel">
-        <h3 id="data-pribadi-header">DATA PRIBADI</h3>
-        <table id="data-pribadi-table">
-          <tr>
-            <td>Tempat, Tanggal Lahir</td>
-            <td>: Subang, 14 Juni 2005</td>
-          </tr>
-          <tr>
-            <td>Alamat</td>
-            <td>: Desa Babakan Bandung, Kec. Kalijati</td>
-          </tr>
-          <tr>
-            <td>Nomor Telepon</td>
-            <td>: 0882-2048-7058</td>
-          </tr>
-          <tr>
-            <td>Jenis Kelamin</td>
-            <td>: Laki-laki</td>
-          </tr>
-          <tr>
-            <td>Agama</td>
-            <td>: Islam</td>
-          </tr>
-          <tr>
-            <td>Kewarganegaraan</td>
-            <td>: Indonesia</td>
-          </tr>
-          <tr>
-            <td>Email</td>
-            <td>: muhammadrifki08t@Gmail.com</td>
-          </tr>
-          <tr>
-            <td>Status</td>
-            <td>: Belum Menikah</td>
-          </tr>
-        </table>
+        <div class="section" id="section-data">
+          <h3 id="data-pribadi-header">DATA PRIBADI</h3>
+          <table id="data-pribadi-table">
+            <tr>
+              <td>Tempat, Tanggal Lahir</td>
+              <td>: Subang, 14 Juni 2005</td>
+            </tr>
+            <tr>
+              <td>Alamat</td>
+              <td>: Desa Babakan Bandung, Kec. Kalijati</td>
+            </tr>
+            <tr>
+              <td>Nomor Telepon</td>
+              <td>: 0882-2048-7058</td>
+            </tr>
+            <tr>
+              <td>Jenis Kelamin</td>
+              <td>: Laki-laki</td>
+            </tr>
+            <tr>
+              <td>Agama</td>
+              <td>: Islam</td>
+            </tr>
+            <tr>
+              <td>Kewarganegaraan</td>
+              <td>: Indonesia</td>
+            </tr>
+            <tr>
+              <td>Email</td>
+              <td>: muhammadrifki08t@Gmail.com</td>
+            </tr>
+            <tr>
+              <td>Status</td>
+              <td>: Belum Menikah</td>
+            </tr>
+          </table>
+        </div>
 
-        <h3 id="pendidikan-header">PENDIDIKAN</h3>
-        <ul id="pendidikan-list">
-          <li>
-            <strong>Politeknik Negeri Subang</strong><br />
-            D3 Sistem Informasi (2024 - Sekarang)
-          </li>
-          <li>
-            <strong>SMKS Yadika Kalijati</strong><br />
-            TKJ (2021 - 2024)
-          </li>
-        </ul>
-
-        <h3 id="pengalaman-header">PENGALAMAN</h3>
-        <div id="pengalaman-list">
-          <h4 id="exp-1-title">Panitia MABIM</h4>
-          <i id="exp-1-date">(2024)</i>
-          <ul>
-            <li>Berpartisipasi aktif dalam kegiatan MABIM.</li>
-            <li>Membantu koordinasi acara.</li>
-          </ul>
-
-          <h4 id="exp-2-title">Proyek VBA Excel</h4>
-          <i id="exp-2-date">(2024)</i>
-          <ul>
-            <li>Membuat aplikasi sederhana menggunakan VBA Excel.</li>
-            <li>Mengotomatisasi tugas-tugas administratif.</li>
+        <div class="section" id="section-pendidikan">
+          <h3 id="pendidikan-header">PENDIDIKAN</h3>
+          <ul id="pendidikan-list">
+            <li>
+              <strong>Politeknik Negeri Subang</strong><br />
+              D3 Sistem Informasi (2024 - Sekarang)
+            </li>
+            <li>
+              <strong>SMKS Yadika Kalijati</strong><br />
+              TKJ (2021 - 2024)
+            </li>
           </ul>
         </div>
 
-        <h3 id="hobi-header">HOBI</h3>
-        <ul id="hobi-list">
-          <li>Membaca Buku</li>
-          <li>Travelling</li>
-          <li>Coding</li>
-        </ul>
+        <div class="section" id="section-pengalaman">
+          <h3 id="pengalaman-header">PENGALAMAN</h3>
+          <div id="pengalaman-list">
+            <h4 id="exp-1-title">Panitia MABIM</h4>
+            <i id="exp-1-date">(2024)</i>
+
+            <ul>
+              <li><a href="https://www.instagram.com/kiiirifki_14/p/DO1RqX5EmTN/" target="_blank">Berpartisipasi aktif dalam kegiatan MABIM.</a></li>
+              <li>Membantu koordinasi acara.</li>
+            </ul>
+
+            <h4 id="exp-2-title">Proyek VBA Excel</h4>
+            <i id="exp-2-date">(2024)</i>
+            <ul>
+              <li><a href="https://youtu.be/aDktQDotmQw?si=m-xdg8gIHyFOjR1g" target="_blank">Membuat aplikasi sederhana menggunakan VBA Excel.</a></li>
+              <li>Mengotomatisasi tugas-tugas administratif.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section" id="section-hobi">
+          <h3 id="hobi-header">HOBI</h3>
+          <ul id="hobi-list">
+            <li>📖 Membaca Buku</li>
+            <li>✈️ Travelling</li>
+            <li>💻 Coding</li>
+          </ul>
+        </div>
       </div>
     </div>
+
+    <!-- Toast Notification -->
+    <div id="toast"></div>
 
     <!-- Floating Action Buttons -->
     <div id="fab-container">
